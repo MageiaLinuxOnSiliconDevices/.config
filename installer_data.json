@@ -1,0 +1,37 @@
+{
+    "os_list": [
+        {
+            "name": "Mageia Minimal (Mageia Linux ARM)",
+            "default_os_name": "Mageia",
+            "boot_object": "m1n1.bin",
+            "next_object": "m1n1/boot.bin",
+            "package": "asahi-base-20230128-1.zip",
+            "supported_fw": ["12.3", "12.3.1", "12.4"],
+            "partitions": [
+                {
+                    "name": "EFI",
+                    "type": "EFI",
+                    "size": " 524288000B",
+                    "format": "fat",
+                    "volume_id": "0x2abf9f91",
+                    "copy_firmware": true,
+                    "copy_installer_data": true,
+                    "source": "esp"
+                },
+                {
+                    "name": "Boot",
+                    "type": "Linux",
+                    "size": "1073741824B",
+                    "image": "boot.img"
+                },                
+                {
+                    "name": "Root",
+                    "type": "Linux",
+                    "size": "5GB",
+                    "expand": true,
+                    "image": "root.img"
+                }
+            ]
+        }
+    ]
+}
